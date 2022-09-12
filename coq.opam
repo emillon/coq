@@ -43,10 +43,10 @@ build: [
     "-coqide" "no"
     "-native-compiler" "yes" {coq-native:installed} "no" {!coq-native:installed}
   ]
-  [ make "COQ_USE_DUNE=" "-j%{jobs}%" ]
+  [ make "-f" "Makefile.dune" "-j%{jobs}%" ]
 ]
 install: [
-  [ make "COQ_USE_DUNE=" "install" ]
+  [ make "-f" "Makefile.dune" "install" ]
 ]
 
 url {
